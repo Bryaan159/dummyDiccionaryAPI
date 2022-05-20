@@ -29,14 +29,15 @@ exports.getUser = async (req, res, next) => {
 
 exports.createUser = async (req, res, next) => {
   try {
-    //TODO: Requiere validation
-    let { username, name, lastName, email, password } = req.body;
+    //TODO: Requiere validation y tambien lo de la actividad
+    let { username, name, lastName, email, password,role} = req.body;
     let newUser = await UserModel.create({
       username,
       name,
       email,
       lastName,
       password,
+      role
     });
     newUser.password = null;
     res.send({ newUser });

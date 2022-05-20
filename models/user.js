@@ -26,6 +26,11 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    //Haciendo la parte de la actividad
+    role:{
+      type:String,
+      require:true,
+    }
   },
   { timestamps: true }
 );

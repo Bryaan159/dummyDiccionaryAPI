@@ -2,9 +2,11 @@ var { createUser } = require("../controllers/user");
 var express = require("express");
 var jwt = require("jsonwebtoken");
 var UserModel = require("../models/user");
+//Creando la variable para haveRole
+var haveRole = require("../auth/haveRole"); 
 var router = express.Router();
 
-router.post("/register", createUser);
+router.post("/register",haveRole("rae","user"), createUser);
 router.post("/login", async (req, res, next) => {
   try {
     let { username, password } = req.body; //TODO: Add email 
