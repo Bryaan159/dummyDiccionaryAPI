@@ -26,7 +26,7 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
-    //Haciendo la parte de la actividad
+    //Haciendo la parte de la actividad lab3
     role:{
       type:String,
       require:true,
