@@ -6,7 +6,7 @@ const WordSchema = new Schema(
     term: {
       type: String,
       required: true,
-      unique: "Term cant be null",
+      unique: true,
     },
     description: {
       type: String,
